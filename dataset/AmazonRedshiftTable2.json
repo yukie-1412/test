@@ -1,0 +1,17 @@
+{
+	"name": "AmazonRedshiftTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AmazonRedshift2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AmazonRedshiftTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "private",
+			"table": "test-table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

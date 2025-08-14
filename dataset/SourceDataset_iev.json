@@ -1,0 +1,85 @@
+{
+	"name": "SourceDataset_iev",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ServiceNow3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ServiceNowV2Object",
+		"schema": [
+			{
+				"name": "sys_class_name",
+				"type": "sys_class_name"
+			},
+			{
+				"name": "mfa_policy_context",
+				"type": "reference"
+			},
+			{
+				"name": "sys_created_on",
+				"type": "glide_date_time"
+			},
+			{
+				"name": "sys_id",
+				"type": "GUID"
+			},
+			{
+				"name": "source_ip",
+				"type": "string"
+			},
+			{
+				"name": "auth_policy_context",
+				"type": "reference"
+			},
+			{
+				"name": "sys_created_by",
+				"type": "string"
+			},
+			{
+				"name": "api_auth_policies",
+				"type": "glide_list"
+			},
+			{
+				"name": "user_name",
+				"type": "string"
+			},
+			{
+				"name": "auth_policy",
+				"type": "reference"
+			},
+			{
+				"name": "sys_updated_on",
+				"type": "glide_date_time"
+			},
+			{
+				"name": "event_source",
+				"type": "choice"
+			},
+			{
+				"name": "event_type",
+				"type": "choice"
+			},
+			{
+				"name": "default_policy",
+				"type": "choice"
+			},
+			{
+				"name": "sys_mod_count",
+				"type": "integer"
+			},
+			{
+				"name": "sys_updated_by",
+				"type": "string"
+			},
+			{
+				"name": "result",
+				"type": "choice"
+			}
+		],
+		"typeProperties": {
+			"tableName": "adaptive_auth_event"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

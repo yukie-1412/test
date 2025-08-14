@@ -1,0 +1,31 @@
+{
+	"name": "AmazonRedshiftTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AmazonRedshift1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "String"
+			},
+			"table": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AmazonRedshiftTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

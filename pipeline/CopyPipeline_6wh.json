@@ -1,0 +1,521 @@
+{
+	"name": "CopyPipeline_6wh",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_6wh",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_6wh",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.objectApiName}"
+								},
+								{
+									"name": "Destination",
+									"value": "@{item().destination.objectApiName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "SalesforceV2Source",
+									"includeDeletedObjects": {
+										"value": "@item().copySource.includeDeletedObjects",
+										"type": "Expression"
+									}
+								},
+								"sink": {
+									"type": "SalesforceV2Sink",
+									"writeBatchSize": 5000,
+									"writeBehavior": "insert"
+								},
+								"enableStaging": false,
+								"validateDataConsistency": false,
+								"translator": {
+									"value": "@item().copyActivity.translator",
+									"type": "Expression"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_6wh",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_objectApiName": "@item().source.objectApiName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_6wh",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_objectApiName": "@item().destination.objectApiName"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"objectApiName": "ABCcc__c"
+						},
+						"destination": {
+							"objectApiName": "ABCcc__c"
+						},
+						"copySource": {
+							"includeDeletedObjects": true
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Id",
+											"type": "String",
+											"physicalType": "id"
+										},
+										"sink": {
+											"name": "Id",
+											"type": "String",
+											"physicalType": "id"
+										}
+									},
+									{
+										"source": {
+											"name": "OwnerId",
+											"type": "String",
+											"physicalType": "reference"
+										},
+										"sink": {
+											"name": "OwnerId",
+											"type": "String",
+											"physicalType": "reference"
+										}
+									},
+									{
+										"source": {
+											"name": "IsDeleted",
+											"type": "Boolean",
+											"physicalType": "boolean"
+										},
+										"sink": {
+											"name": "IsDeleted",
+											"type": "Boolean",
+											"physicalType": "boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "Name",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Name",
+											"type": "String",
+											"physicalType": "string"
+										}
+									},
+									{
+										"source": {
+											"name": "CreatedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "CreatedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									},
+									{
+										"source": {
+											"name": "CreatedById",
+											"type": "String",
+											"physicalType": "reference"
+										},
+										"sink": {
+											"name": "CreatedById",
+											"type": "String",
+											"physicalType": "reference"
+										}
+									},
+									{
+										"source": {
+											"name": "LastModifiedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "LastModifiedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									},
+									{
+										"source": {
+											"name": "LastModifiedById",
+											"type": "String",
+											"physicalType": "reference"
+										},
+										"sink": {
+											"name": "LastModifiedById",
+											"type": "String",
+											"physicalType": "reference"
+										}
+									},
+									{
+										"source": {
+											"name": "SystemModstamp",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "SystemModstamp",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									},
+									{
+										"source": {
+											"name": "Col_Picklist__c",
+											"type": "String",
+											"physicalType": "picklist"
+										},
+										"sink": {
+											"name": "Col_Picklist__c",
+											"type": "String",
+											"physicalType": "picklist"
+										}
+									},
+									{
+										"source": {
+											"name": "Col_Picklist2__c",
+											"type": "String",
+											"physicalType": "picklist"
+										},
+										"sink": {
+											"name": "Col_Picklist2__c",
+											"type": "String",
+											"physicalType": "picklist"
+										}
+									},
+									{
+										"source": {
+											"name": "Col_Number__c",
+											"type": "Decimal",
+											"physicalType": "double"
+										},
+										"sink": {
+											"name": "Col_Number__c",
+											"type": "Decimal",
+											"physicalType": "double"
+										}
+									},
+									{
+										"source": {
+											"name": "testd__c",
+											"type": "Decimal",
+											"physicalType": "double"
+										},
+										"sink": {
+											"name": "testd__c",
+											"type": "Decimal",
+											"physicalType": "double"
+										}
+									},
+									{
+										"source": {
+											"name": "Account_01__c",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Account_01__c",
+											"type": "String",
+											"physicalType": "string"
+										}
+									},
+									{
+										"source": {
+											"name": "Account_02__c",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Account_02__c",
+											"type": "String",
+											"physicalType": "string"
+										}
+									},
+									{
+										"source": {
+											"name": "Account_03__c",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Account_03__c",
+											"type": "String",
+											"physicalType": "string"
+										}
+									},
+									{
+										"source": {
+											"name": "Account_04__c",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Account_04__c",
+											"type": "String",
+											"physicalType": "string"
+										}
+									},
+									{
+										"source": {
+											"name": "Acc__Latitude__s",
+											"type": "Decimal",
+											"physicalType": "double"
+										},
+										"sink": {
+											"name": "Acc__Latitude__s",
+											"type": "Decimal",
+											"physicalType": "double"
+										}
+									},
+									{
+										"source": {
+											"name": "Acc__Longitude__s",
+											"type": "Decimal",
+											"physicalType": "double"
+										},
+										"sink": {
+											"name": "Acc__Longitude__s",
+											"type": "Decimal",
+											"physicalType": "double"
+										}
+									},
+									{
+										"source": {
+											"name": "Acco__c",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Acco__c",
+											"type": "String",
+											"physicalType": "string"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					},
+					{
+						"source": {
+							"objectApiName": "AcceptedEventRelation"
+						},
+						"destination": {
+							"objectApiName": "AcceptedEventRelation"
+						},
+						"copySource": {
+							"includeDeletedObjects": false
+						},
+						"copyActivity": {
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Id",
+											"type": "String",
+											"physicalType": "id"
+										},
+										"sink": {
+											"name": "Id",
+											"type": "String",
+											"physicalType": "id"
+										}
+									},
+									{
+										"source": {
+											"name": "RelationId",
+											"type": "String",
+											"physicalType": "reference"
+										},
+										"sink": {
+											"name": "RelationId",
+											"type": "String",
+											"physicalType": "reference"
+										}
+									},
+									{
+										"source": {
+											"name": "EventId",
+											"type": "String",
+											"physicalType": "reference"
+										},
+										"sink": {
+											"name": "EventId",
+											"type": "String",
+											"physicalType": "reference"
+										}
+									},
+									{
+										"source": {
+											"name": "RespondedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "RespondedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									},
+									{
+										"source": {
+											"name": "Response",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Response",
+											"type": "String",
+											"physicalType": "string"
+										}
+									},
+									{
+										"source": {
+											"name": "CreatedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "CreatedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									},
+									{
+										"source": {
+											"name": "CreatedById",
+											"type": "String",
+											"physicalType": "reference"
+										},
+										"sink": {
+											"name": "CreatedById",
+											"type": "String",
+											"physicalType": "reference"
+										}
+									},
+									{
+										"source": {
+											"name": "LastModifiedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "LastModifiedDate",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									},
+									{
+										"source": {
+											"name": "LastModifiedById",
+											"type": "String",
+											"physicalType": "reference"
+										},
+										"sink": {
+											"name": "LastModifiedById",
+											"type": "String",
+											"physicalType": "reference"
+										}
+									},
+									{
+										"source": {
+											"name": "SystemModstamp",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "SystemModstamp",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									},
+									{
+										"source": {
+											"name": "IsDeleted",
+											"type": "Boolean",
+											"physicalType": "boolean"
+										},
+										"sink": {
+											"name": "IsDeleted",
+											"type": "Boolean",
+											"physicalType": "boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "Type",
+											"type": "String",
+											"physicalType": "string"
+										},
+										"sink": {
+											"name": "Type",
+											"type": "String",
+											"physicalType": "string"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						}
+					}
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-10-22T08:03:35Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

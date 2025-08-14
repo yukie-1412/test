@@ -1,0 +1,9 @@
+{
+	"name": "jen-euap",
+	"location": "centraluseuap",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f36f0825-b1bb-46ce-8ad6-f0b3415c081e",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

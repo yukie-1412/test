@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_36n",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SalesforceV21",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SalesforceV2Object",
+		"schema": [],
+		"typeProperties": {
+			"objectApiName": "ABCcc__c"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

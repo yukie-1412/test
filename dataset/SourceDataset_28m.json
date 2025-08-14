@@ -1,0 +1,101 @@
+{
+	"name": "SourceDataset_28m",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ServiceNow3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ServiceNowV2Object",
+		"schema": [
+			{
+				"name": "table_config",
+				"type": "reference"
+			},
+			{
+				"name": "active",
+				"type": "boolean"
+			},
+			{
+				"name": "order",
+				"type": "integer"
+			},
+			{
+				"name": "source_type",
+				"type": "string"
+			},
+			{
+				"name": "script",
+				"type": "script"
+			},
+			{
+				"name": "",
+				"type": "collection"
+			},
+			{
+				"name": "sys_id",
+				"type": "GUID"
+			},
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "sys_policy",
+				"type": "string"
+			},
+			{
+				"name": "sys_mod_count",
+				"type": "integer"
+			},
+			{
+				"name": "sys_updated_by",
+				"type": "string"
+			},
+			{
+				"name": "sys_class_name",
+				"type": "sys_class_name"
+			},
+			{
+				"name": "",
+				"type": "collection"
+			},
+			{
+				"name": "sys_scope",
+				"type": "reference"
+			},
+			{
+				"name": "sys_id",
+				"type": "GUID"
+			},
+			{
+				"name": "sys_created_on",
+				"type": "glide_date_time"
+			},
+			{
+				"name": "sys_package",
+				"type": "reference"
+			},
+			{
+				"name": "sys_created_by",
+				"type": "string"
+			},
+			{
+				"name": "sys_update_name",
+				"type": "string"
+			},
+			{
+				"name": "sys_name",
+				"type": "string"
+			},
+			{
+				"name": "sys_updated_on",
+				"type": "glide_date_time"
+			}
+		],
+		"typeProperties": {
+			"tableName": "agent_assist_recommendation"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

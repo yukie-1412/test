@@ -1,0 +1,24 @@
+{
+	"name": "SourceDataset_aum",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ServiceNow1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_tableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "ServiceNowV2Object",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().cw_tableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

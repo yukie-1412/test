@@ -1,0 +1,17 @@
+{
+	"name": "SourceDataset_0hv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SalesforceV21",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SalesforceV2Object",
+		"schema": [],
+		"typeProperties": {
+			"reportId": "00OJ00000019FkIMAU",
+			"unsupported": "asdfasdf"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

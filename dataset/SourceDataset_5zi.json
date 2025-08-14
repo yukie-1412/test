@@ -1,0 +1,24 @@
+{
+	"name": "SourceDataset_5zi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SalesforceV21",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_objectApiName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SalesforceV2Object",
+		"schema": [],
+		"typeProperties": {
+			"objectApiName": {
+				"value": "@dataset().cw_objectApiName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "DynamicsCrmEntity1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DynamicsCrm1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "a"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

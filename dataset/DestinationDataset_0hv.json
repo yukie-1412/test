@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_0hv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SalesforceV21",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "abc"
+		},
+		"annotations": [],
+		"type": "SalesforceV2Object",
+		"schema": [],
+		"typeProperties": {
+			"objectApiName": "00OJ00000019FkIMAU"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

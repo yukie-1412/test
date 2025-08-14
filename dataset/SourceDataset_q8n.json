@@ -1,0 +1,16 @@
+{
+	"name": "SourceDataset_q8n",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ServiceNow1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ServiceNowV2Object",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "agent_assist_recommendation"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

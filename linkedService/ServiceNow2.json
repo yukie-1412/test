@@ -1,0 +1,21 @@
+{
+	"name": "ServiceNow2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "ServiceNowV2",
+		"typeProperties": {
+			"endpoint": "https://dev252079.service-now.com/",
+			"authenticationType": "Basic",
+			"username": "admin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "servicenow"
+			}
+		}
+	}
+}

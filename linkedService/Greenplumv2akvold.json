@@ -1,0 +1,25 @@
+{
+	"name": "Greenplumv2akvold",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Greenplum",
+		"version": "2.0",
+		"typeProperties": {
+			"authenticationType": "Basic",
+			"host": "a",
+			"port": 5432,
+			"database": "a",
+			"username": "a",
+			"sslMode": 3,
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "a"
+			}
+		}
+	}
+}

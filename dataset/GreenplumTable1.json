@@ -1,0 +1,17 @@
+{
+	"name": "GreenplumTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GreenplumV2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "GreenplumTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "gp_toolkit",
+			"table": "__gp_fullname"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

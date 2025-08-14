@@ -1,0 +1,268 @@
+{
+	"name": "CopyPipeline_36n",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_36n",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "ABCcc__c"
+					},
+					{
+						"name": "Destination",
+						"value": "ABCcc__c"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SalesforceV2Source",
+						"includeDeletedObjects": false,
+						"readBehavior": "query"
+					},
+					"sink": {
+						"type": "SalesforceSink",
+						"writeBatchSize": 5000,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OwnerId",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OwnerId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IsDeleted",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "IsDeleted",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "Name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CreatedDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedById",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CreatedById",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LastModifiedDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LastModifiedDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LastModifiedById",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LastModifiedById",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SystemModstamp",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "SystemModstamp",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Col_Picklist__c",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Col_Picklist__c",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Col_Picklist2__c",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Col_Picklist2__c",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Col_Number__c",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Col_Number__c",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "testd__c",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "testd__c",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Account_01__c",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Account_01__c",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Account_02__c",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Account_02__c",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Account_03__c",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Account_03__c",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Account_04__c",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Account_04__c",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Acc__Latitude__s",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Acc__Latitude__s",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Acc__Longitude__s",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Acc__Longitude__s",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Acco__c",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Acco__c",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_36n",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_36n",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-12-19T07:16:10Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
