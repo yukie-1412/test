@@ -1,0 +1,60 @@
+{
+	"name": "SnowflakeTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Snowflake13",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"account": {
+					"value": "@dataset().account",
+					"type": "Expression"
+				},
+				"db": {
+					"value": "@dataset().db",
+					"type": "Expression"
+				},
+				"warehouse": {
+					"value": "@dataset().warehouse",
+					"type": "Expression"
+				},
+				"user": {
+					"value": "@dataset().user",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"account": {
+				"type": "String"
+			},
+			"db": {
+				"type": "String"
+			},
+			"warehouse": {
+				"type": "String"
+			},
+			"user": {
+				"type": "String"
+			},
+			"schema": {
+				"type": "String"
+			},
+			"table": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table",
+				"type": "Expression"
+			}
+		}
+	}
+}
