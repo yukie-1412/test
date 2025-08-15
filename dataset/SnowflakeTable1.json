@@ -2,15 +2,15 @@
 	"name": "SnowflakeTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Snowflake13",
+			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference",
 			"parameters": {
 				"account": {
 					"value": "@dataset().account",
 					"type": "Expression"
 				},
-				"db": {
-					"value": "@dataset().db",
+				"database": {
+					"value": "@dataset().database",
 					"type": "Expression"
 				},
 				"warehouse": {
@@ -20,6 +20,14 @@
 				"user": {
 					"value": "@dataset().user",
 					"type": "Expression"
+				},
+				"role": {
+					"value": "@dataset().role",
+					"type": "Expression"
+				},
+				"host": {
+					"value": "@dataset().host",
+					"type": "Expression"
 				}
 			}
 		},
@@ -27,7 +35,7 @@
 			"account": {
 				"type": "String"
 			},
-			"db": {
+			"database": {
 				"type": "String"
 			},
 			"warehouse": {
@@ -36,7 +44,13 @@
 			"user": {
 				"type": "String"
 			},
-			"schema": {
+			"role": {
+				"type": "String"
+			},
+			"host": {
+				"type": "String"
+			},
+			"schem": {
 				"type": "String"
 			},
 			"table": {
@@ -48,7 +62,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": {
-				"value": "@dataset().schema",
+				"value": "@dataset().schem",
 				"type": "Expression"
 			},
 			"table": {
@@ -56,5 +70,6 @@
 				"type": "Expression"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

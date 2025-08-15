@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
-				"type": "Copy",
+				"name": "Script1",
+				"type": "Script",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -14,35 +14,75 @@
 					"secureInput": false
 				},
 				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "CommonDataServiceForAppsSource"
-					},
-					"sink": {
-						"type": "CommonDataServiceForAppsSink",
-						"writeBatchSize": 10,
-						"writeBehavior": "upsert",
-						"ignoreNullValues": false,
-						"alternateKeyName": "abc"
-					},
-					"enableStaging": false
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"account": {
+							"value": "@pipeline().parameters.account",
+							"type": "Expression"
+						},
+						"database": {
+							"value": "@pipeline().parameters.database",
+							"type": "Expression"
+						},
+						"warehouse": {
+							"value": "@pipeline().parameters.warehouse",
+							"type": "Expression"
+						},
+						"user": {
+							"value": "@pipeline().parameters.user",
+							"type": "Expression"
+						},
+						"role": {
+							"value": "@pipeline().parameters.role",
+							"type": "Expression"
+						},
+						"host": {
+							"value": "@pipeline().parameters.host",
+							"type": "Expression"
+						}
+					}
 				},
-				"inputs": [
-					{
-						"referenceName": "DataverseEntity1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DataverseEntity1",
-						"type": "DatasetReference"
-					}
-				]
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": {
+								"value": "@pipeline().parameters.query",
+								"type": "Expression"
+							}
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
 			}
 		],
+		"parameters": {
+			"account": {
+				"type": "String"
+			},
+			"database": {
+				"type": "String"
+			},
+			"warehouse": {
+				"type": "String"
+			},
+			"user": {
+				"type": "String"
+			},
+			"role": {
+				"type": "String"
+			},
+			"host": {
+				"type": "String"
+			},
+			"query": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
-		"lastPublishTime": "2025-03-28T07:57:38Z"
+		"lastPublishTime": "2025-08-15T06:10:48Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
