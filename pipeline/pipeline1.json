@@ -1,0 +1,72 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Script1",
+				"type": "Script",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"account": {
+							"value": "@pipeline().parameters.account",
+							"type": "Expression"
+						},
+						"database": {
+							"value": "@pipeline().parameters.database",
+							"type": "Expression"
+						},
+						"warehouse": {
+							"value": "@pipeline().parameters.warehouse",
+							"type": "Expression"
+						},
+						"user": {
+							"value": "@pipeline().parameters.user",
+							"type": "Expression"
+						},
+						"role": {
+							"value": "@pipeline().parameters.role",
+							"type": "Expression"
+						}
+					}
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
+			}
+		],
+		"parameters": {
+			"account": {
+				"type": "string"
+			},
+			"database": {
+				"type": "string"
+			},
+			"warehouse": {
+				"type": "string"
+			},
+			"user": {
+				"type": "string"
+			},
+			"role": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
