@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline2",
 	"properties": {
 		"activities": [
 			{
@@ -20,69 +20,23 @@
 						"expression": {
 							"type": "Nary",
 							"operators": [
-								"NQ"
+								"AND",
+								"OR"
 							],
 							"operands": [
 								{
 									"type": "Nary",
 									"operators": [
-										"AND",
-										"OR"
+										"="
 									],
 									"operands": [
 										{
-											"type": "Nary",
-											"operators": [
-												"="
-											],
-											"operands": [
-												{
-													"type": "Field",
-													"value": "session_properties"
-												},
-												{
-													"type": "Constant",
-													"value": {
-														"value": "@pipeline().parameters.session",
-														"type": "Expression"
-													}
-												}
-											]
+											"type": "Field",
+											"value": "abc"
 										},
 										{
-											"type": "Nary",
-											"operators": [
-												"="
-											],
-											"operands": [
-												{
-													"type": "Field",
-													"value": "server"
-												},
-												{
-													"type": "Constant",
-													"value": {
-														"value": "@pipeline().parameters.server",
-														"type": "Expression"
-													}
-												}
-											]
-										},
-										{
-											"type": "Nary",
-											"operators": [
-												"="
-											],
-											"operands": [
-												{
-													"type": "Field",
-													"value": "2"
-												},
-												{
-													"type": "Constant",
-													"value": "123"
-												}
-											]
+											"type": "Constant",
+											"value": "def"
 										}
 									]
 								},
@@ -94,11 +48,27 @@
 									"operands": [
 										{
 											"type": "Field",
-											"value": "2"
+											"value": "e"
 										},
 										{
 											"type": "Constant",
-											"value": "asdfasdf"
+											"value": "e"
+										}
+									]
+								},
+								{
+									"type": "Nary",
+									"operators": [
+										"="
+									],
+									"operands": [
+										{
+											"type": "Field",
+											"value": "c"
+										},
+										{
+											"type": "Constant",
+											"value": "c"
 										}
 									]
 								}
@@ -140,17 +110,12 @@
 			}
 		],
 		"parameters": {
-			"session": {
-				"type": "String",
-				"defaultValue": "session"
-			},
-			"server": {
-				"type": "String",
-				"defaultValue": "server"
+			"abc": {
+				"type": "Object"
 			}
 		},
 		"annotations": [],
-		"lastPublishTime": "2024-12-19T05:05:49Z"
+		"lastPublishTime": "2024-12-19T02:59:58Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "servicenowParam",
 	"properties": {
 		"activities": [
 			{
@@ -26,79 +26,46 @@
 								{
 									"type": "Nary",
 									"operators": [
-										"AND",
-										"OR"
+										"="
 									],
 									"operands": [
 										{
-											"type": "Nary",
-											"operators": [
-												"="
-											],
-											"operands": [
-												{
-													"type": "Field",
-													"value": "session_properties"
-												},
-												{
-													"type": "Constant",
-													"value": {
-														"value": "@pipeline().parameters.session",
-														"type": "Expression"
-													}
-												}
-											]
+											"type": "Field",
+											"value": "a"
 										},
 										{
-											"type": "Nary",
-											"operators": [
-												"="
-											],
-											"operands": [
-												{
-													"type": "Field",
-													"value": "server"
-												},
-												{
-													"type": "Constant",
-													"value": {
-														"value": "@pipeline().parameters.server",
-														"type": "Expression"
-													}
-												}
-											]
-										},
-										{
-											"type": "Nary",
-											"operators": [
-												"="
-											],
-											"operands": [
-												{
-													"type": "Field",
-													"value": "2"
-												},
-												{
-													"type": "Constant",
-													"value": "123"
-												}
-											]
+											"type": "Constant",
+											"value": {
+												"value": "@pipeline().parameters.a",
+												"type": "Expression"
+											}
 										}
 									]
 								},
 								{
 									"type": "Nary",
 									"operators": [
-										"="
+										"BETWEEN",
+										"@"
 									],
 									"operands": [
 										{
 											"type": "Field",
-											"value": "2"
+											"value": "b"
 										},
 										{
 											"type": "Constant",
-											"value": "asdfasdf"
+											"value": {
+												"value": "@pipeline().parameters.b",
+												"type": "Expression"
+											}
+										},
+										{
+											"type": "Constant",
+											"value": {
+												"value": "@pipeline().parameters.c",
+												"type": "Expression"
+											}
 										}
 									]
 								}
@@ -140,17 +107,18 @@
 			}
 		],
 		"parameters": {
-			"session": {
-				"type": "String",
-				"defaultValue": "session"
+			"a": {
+				"type": "String"
 			},
-			"server": {
-				"type": "String",
-				"defaultValue": "server"
+			"b": {
+				"type": "String"
+			},
+			"c": {
+				"type": "String"
 			}
 		},
 		"annotations": [],
-		"lastPublishTime": "2024-12-19T05:05:49Z"
+		"lastPublishTime": "2024-12-04T06:59:27Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

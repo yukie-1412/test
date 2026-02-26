@@ -1,5 +1,5 @@
 {
-	"name": "AzureKeyVault1",
+	"name": "SalesforceAkv",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
